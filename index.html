@@ -362,7 +362,7 @@
 		</p>
 		<p>
 			<br>These results confirmed that CosyVoice 2 often fails to accurately represent the accent of a reference speaker. Happy utterances seemed particularly prone to accent hallucination, with an average SMOS of just 1.84. All 3 emotions though saw low scoring utterances suggesting that accent hallucination was not exclusively caused by certain emotions.
-			Instead, listening to the utterances revealed that nature of the accent hallucination did seem to be guided by the emotion of the input. A selection of the utterances used in the listening test can be heard at the bottom of the page while a preview of the listening test can be seen <a href="https://edinburgh.eu.qualtrics.com/jfe/preview/previewId/78f18236-4601-4273-a736-169153040af5/SV_0D4WFRBRpKhCe1M?Q_CHL=preview&Q_SurveyVersionID=current">here</a>.
+			Instead, listening to the utterances revealed that nature of the accent hallucination did seem to be guided by the emotion of the input. A selection of the utterances used in the listening test can be heard at the bottom of the page while a preview of the listening test can be seen <a href="https://edinburgh.eu.qualtrics.com/jfe/preview/previewId/78f18236-4601-4273-a736-169153040af5/SV_0D4WFRBRpKhCe1M?Q_CHL=preview&Q_SurveyVersionID=current"><u>here</u></a>.
 		</p>
 	  </div>
 	</div>
@@ -431,7 +431,9 @@
         <p>
 			To further investigate the nature of the issues in CosyVoice 2 and to establish the existence of accent-emotion entanglement over random accent hallucination, the sythesised utterances were further evaluated. 100 utterances were synthesised for each emotion (angry/happy/neutral), target text (5 total), speaker (2 male, 2 female) and system (CosyVoice 2 and MaskGCT). 
 			Each utterance was then passed through an accent recognition system, GenAID <a href="https://www.arxiv.org/abs/2409.09098">(Zhong et al, 2025)</a>, to produce accent embeddings. These embeddings can be seen in the graphs above, reduced to 2 dimensions through UMAP projection. Ground truth accents were taken from the VCTK <a href="https://datashare.ed.ac.uk/handle/10283/3443">(Yamagishi et al, 2020)</a> and CommonAccent <a href="https://arxiv.org/abs/2305.18283">(Zuluaga-Gomez et al, 2023)</a> databases to provide context.
-			These visualisations demonstrate clear trends for each emotion in CosyVoice 2...
+			These visualisations support the listening test resutls and show how the emotion of the input provided to CosyVoice 2 impacts the accent of the output. While the majority of utterances have a General American accent, regardless of the accent of the reference speaker, clusters of outliers can be seen for each emotions. For example, many angry utterances are given African accents.
+			This does not occur for neutral input which instead sees a cluster of British-accented utterances. Where the accents of utterances produced by MaskGCT are generally close to their ground truth equivalent, CosyVoice 2 utterances follow a very similar, highly dispersed pattern regardless of reference speaker. This suggests that it is not exclusively some element of the reference speech that is leading to the accent hallucination.
+			The greater spread of the CosyVoice 2 utterance accents is quantified in the table below. For every speaker and emotion, CosyVoice 2 utterances show the greatest average cosine distance from their respective centroid. CosyVoice 2 produces a wide variety of accents for each speaker and emotion. This backs up the visualisations and the listening test results...
 		</p>
 	  </div>
 	</div>
