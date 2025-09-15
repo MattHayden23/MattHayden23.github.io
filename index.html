@@ -262,15 +262,23 @@
 
 <section class="section hero is-light">
   <div class="container is-max-desktop">
-    <div class="columns is-centered">
+    <div class="columns is-centered has-text-centered">
       <div class="column is-full">
         <h2 class="title is-3">
 			Subjective Results
 		</h2>
-		<p>
-			<br><br><br>
-		</p>
+	  </div>
+	</div>
+  </div>
+</section>
+
+		  
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
 	  	<p>
+			<br>
 			<div style="overflow-x: auto; display: flex; justify-content: center;">
 				<table class="table table-hover pt-2"
 					style="max-width: 100%; border-collapse: collapse; border-bottom: 2px solid #dbdbdb;">
@@ -350,7 +358,9 @@
 			The rating system used a 1-5 scale, with lower scores representing lesser similarity. The results of this test are shown in the table above and are visualised below. 
 		</p>
 		<p>
+			<br>
 			<img src="images/list_test_plot.png" alt="Listening Test Accent Results" class="blend-img-background center-image" style="max-width: 100%; height: auto;" loading="lazy">
+			<br>
 		</p>
 		<p>
 			These results confirmed that CosyVoice 2 often fails to accurately represent the accent of a reference speaker. Happy utterances seemed particularly prone to accent hallucination, with an average SMOS of just 1.84. All 3 emotions though saw low scoring utterances suggesting that accent hallucination was not exclusively caused by certain emotions.
@@ -370,48 +380,56 @@
         <h2 class="title is-3">
 			Objective Results
 		</h2>
-		<p>
-			<br><br><br>
-		</p>
-		<p>
-			<!-- Image carousel -->
-			<div class="hero-body">
-				<div class="container">
-					<div id="results-carousel" class="carousel results-carousel">
-						<div class="item">
-							<!-- TODO: Replace with your research result images -->
-							<img src="images/M007.png" alt="First research result visualization" loading="lazy"/>
-							<!-- TODO: Replace with description of this result -->
-							<h2 class="subtitle has-text-centered">
-							  UMAP plots for speaker M007 showing how the accents of utterances cluster for different emotions. Points represent utterance accent embeddings derived from GenAID <a href="https://www.arxiv.org/abs/2409.09098">(Zhong et al, 2025)</a>, reduced to 2 dimensions. Ground truth accent points are included from the CommonAccent and VCTK databases.
-							</h2>
-						  </div>
-						  <div class="item">
-							<!-- Your image here -->
-							<img src="images/M012.png" alt="Second research result visualization" loading="lazy"/>
-							<h2 class="subtitle has-text-centered">
-							  Second image description.
-							</h2>
-						  </div>
-						  <div class="item">
-							<!-- Your image here -->
-							<img src="images/W018.png" alt="Third research result visualization" loading="lazy"/>
-							<h2 class="subtitle has-text-centered">
-							 Third image description.
-						   </h2>
-						 </div>
-						 <div class="item">
-						  <!-- Your image here -->
-						  <img src="images/W033.png" alt="Fourth research result visualization" loading="lazy"/>
-						  <h2 class="subtitle has-text-centered">
-							Fourth image description.
-						  </h2>
-						</div>
-					</div>
+	  </div>
+	</div>
+  </div>
+</section>
+	  
+
+<section class="hero is-small">
+	<!-- Image carousel -->
+	<div class="hero-body">
+		<div class="container">
+			<div id="results-carousel" class="carousel results-carousel">
+				<div class="item">
+					<!-- TODO: Replace with your research result images -->
+					<img src="images/M007.png" alt="First research result visualization" loading="lazy"/>
+					<!-- TODO: Replace with description of this result -->
+					<h2 class="subtitle has-text-centered">
+					  UMAP plots for speaker M007 showing how the accents of utterances cluster for different emotions. Points represent utterance accent embeddings derived from GenAID <a href="https://www.arxiv.org/abs/2409.09098">(Zhong et al, 2025)</a>, reduced to 2 dimensions. Ground truth accent points are included from the CommonAccent and VCTK databases.
+					</h2>
+				  </div>
+				  <div class="item">
+					<!-- Your image here -->
+					<img src="images/M012.png" alt="Second research result visualization" loading="lazy"/>
+					<h2 class="subtitle has-text-centered">
+					  Second image description.
+					</h2>
+				  </div>
+				  <div class="item">
+					<!-- Your image here -->
+					<img src="images/W018.png" alt="Third research result visualization" loading="lazy"/>
+					<h2 class="subtitle has-text-centered">
+					 Third image description.
+				   </h2>
+				 </div>
+				 <div class="item">
+				  <!-- Your image here -->
+				  <img src="images/W033.png" alt="Fourth research result visualization" loading="lazy"/>
+				  <h2 class="subtitle has-text-centered">
+					Fourth image description.
+				  </h2>
 				</div>
 			</div>
-			<!-- End image carousel -->
-		</p>
+		</div>
+	</div>
+	<!-- End image carousel -->
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
         <p>
 			<br><br>To further investigate the nature of the issues in CosyVoice 2 and to establish the existence of accent-emotion entanglement over random accent hallucination, the sythesised utterances were further evaluated. 100 utterances were synthesised for each emotion (angry/happy/neutral), target text (5 total), speaker (2 male, 2 female) and system (CosyVoice 2 and MaskGCT). 
 			Each utterance was then passed through an accent recognition system, GenAID <a href="https://www.arxiv.org/abs/2409.09098">(Zhong et al, 2025)</a>, to produce accent embeddings. These embeddings can be seen in the graphs above, reduced to 2 dimensions through UMAP projection. Ground truth accents were taken from the VCTK <a href="https://datashare.ed.ac.uk/handle/10283/3443">(Yamagishi et al, 2020)</a> and CommonAccent <a href="https://arxiv.org/abs/2305.18283">(Zuluaga-Gomez et al, 2023)</a> databases to provide context.
