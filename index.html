@@ -433,7 +433,107 @@
 			Each utterance was then passed through an accent recognition system, GenAID <a href="https://www.arxiv.org/abs/2409.09098">(Zhong et al, 2025)</a>, to produce accent embeddings. These embeddings can be seen in the graphs above, reduced to 2 dimensions through UMAP projection. Ground truth accents were taken from the VCTK <a href="https://datashare.ed.ac.uk/handle/10283/3443">(Yamagishi et al, 2020)</a> and CommonAccent <a href="https://arxiv.org/abs/2305.18283">(Zuluaga-Gomez et al, 2023)</a> databases to provide context.
 			These visualisations support the listening test resutls and show how the emotion of the input provided to CosyVoice 2 impacts the accent of the output. While the majority of utterances have a General American accent, regardless of the accent of the reference speaker, clusters of outliers can be seen for each emotions. For example, many angry utterances are given African accents.
 			This does not occur for neutral input which instead sees a cluster of British-accented utterances. Where the accents of utterances produced by MaskGCT are generally close to their ground truth equivalent, CosyVoice 2 utterances follow a very similar, highly dispersed pattern regardless of reference speaker. This suggests that it is not exclusively some element of the reference speech that is leading to the accent hallucination.
-			The greater spread of the CosyVoice 2 utterance accents is quantified in the table below. For every speaker and emotion, CosyVoice 2 utterances show the greatest average cosine distance from their respective centroid. CosyVoice 2 produces a wide variety of accents for each speaker and emotion. This backs up the visualisations and the listening test results...
+		</p>
+		<p>
+			<div style="overflow-x: auto; display: flex; justify-content: center;">
+				<table class="table table-hover pt-2"
+					style="max-width: 100%; border-collapse: collapse; border-bottom: 2px solid #dbdbdb;">
+					<caption>Average cosine distance between the accent embedding of an utterance and its centroid. Bold represents system with highest distance.</caption>
+						<thead>
+						<tr>
+							<th style="vertical-align : middle;text-align: center;" rowspan= "2"><b>Speaker</b></td>
+							<th style="vertical-align : middle;text-align: center;" rowspan= "2"><b>Emotion</b></td>
+							<th style="vertical-align : middle;text-align: center;" colspan= "3"><b>Cosine Distance to Centroid</b></th>
+						</tr>
+						<tr>
+							<th style="vertical-align : middle;text-align: center"><b>Ground Truth</b></th>
+							<th style="vertical-align : middle;text-align: center"><b>CosyVoice 2</b></th>
+							<th style="vertical-align : middle;text-align: center"><b>MaskGCT</b></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td style="vertical-align : middle;text-align: center" rowspan= "3"><b>M007</b></td>
+							<td style="vertical-align : middle;text-align: center"><b>Angry</b></td>
+							<td style="vertical-align : middle;text-align: center">0.017</td>
+							<td style="vertical-align : middle;text-align: center"><b>0.032</b></td>
+							<td style="vertical-align : middle;text-align: center">0.017</td>
+						</tr>
+						<tr>
+							<td style="vertical-align : middle;text-align: center"><b>Happy</b></td>
+							<td style="vertical-align : middle;text-align: center">0.017</td>
+							<td style="vertical-align : middle;text-align: center"><b>0.055</b></td>
+							<td style="vertical-align : middle;text-align: center">0.010</td>
+						</tr>
+						<tr>
+							<td style="vertical-align : middle;text-align: center"><b>Neutral</b></td>
+							<td style="vertical-align : middle;text-align: center">0.034</td>
+							<td style="vertical-align : middle;text-align: center"><b>0.035</b></td>
+							<td style="vertical-align : middle;text-align: center">0.026</td>
+						</tr>
+						<tr>
+							<td style="vertical-align : middle;text-align: center" rowspan= "3"><b>M012</b></td>
+							<td style="vertical-align : middle;text-align: center"><b>Angry</b></td>
+							<td style="vertical-align : middle;text-align: center">0.019</td>
+							<td style="vertical-align : middle;text-align: center"><b>0.038</b></td>
+							<td style="vertical-align : middle;text-align: center">0.014</td>
+						</tr>
+						<tr>
+							<td style="vertical-align : middle;text-align: center"><b>Happy</b></td>
+							<td style="vertical-align : middle;text-align: center">0.014</td>
+							<td style="vertical-align : middle;text-align: center"><b>0.058</b></td>
+							<td style="vertical-align : middle;text-align: center">0.017</td>
+						</tr>
+						<tr>
+							<td style="vertical-align : middle;text-align: center"><b>Neutral</b></td>
+							<td style="vertical-align : middle;text-align: center">0.016</td>
+							<td style="vertical-align : middle;text-align: center"><b>0.033</b></td>
+							<td style="vertical-align : middle;text-align: center">0.013</td>
+						</tr>
+						<tr>
+							<td style="vertical-align : middle;text-align: center" rowspan= "3"><b>W018</b></td>
+							<td style="vertical-align : middle;text-align: center"><b>Angry</b></td>
+							<td style="vertical-align : middle;text-align: center">0.033/td>
+							<td style="vertical-align : middle;text-align: center"><b>0.039</b></td>
+							<td style="vertical-align : middle;text-align: center">0.037</td>
+						</tr>
+						<tr>
+							<td style="vertical-align : middle;text-align: center"><b>Happy</b></td>
+							<td style="vertical-align : middle;text-align: center">0.014</td>
+							<td style="vertical-align : middle;text-align: center"><b>0.052</b></td>
+							<td style="vertical-align : middle;text-align: center">0.020</td>
+						</tr>
+						<tr>
+							<td style="vertical-align : middle;text-align: center"><b>Neutral</b></td>
+							<td style="vertical-align : middle;text-align: center">0.017</td>
+							<td style="vertical-align : middle;text-align: center"><b>0.029</b></td>
+							<td style="vertical-align : middle;text-align: center">0.024</td>
+						</tr>
+						<tr>
+							<td style="vertical-align : middle;text-align: center" rowspan= "3"><b>W033</b></td>
+							<td style="vertical-align : middle;text-align: center"><b>Angry</b></td>
+							<td style="vertical-align : middle;text-align: center">0.020</td>
+							<td style="vertical-align : middle;text-align: center"><b>0.039</b></td>
+							<td style="vertical-align : middle;text-align: center">0.023</td>
+						</tr>
+						<tr>
+							<td style="vertical-align : middle;text-align: center"><b>Happy</b></td>
+							<td style="vertical-align : middle;text-align: center">0.028</td>
+							<td style="vertical-align : middle;text-align: center"><b>0.054</b></td>
+							<td style="vertical-align : middle;text-align: center">0.029</td>
+						</tr>
+						<tr>
+							<td style="vertical-align : middle;text-align: center"><b>Neutral</b></td>
+							<td style="vertical-align : middle;text-align: center">0.019</td>
+							<td style="vertical-align : middle;text-align: center"><b>0.042</b></td>
+							<td style="vertical-align : middle;text-align: center">0.033</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</p>
+		<p>
+			The greater spread of the CosyVoice 2 utterance accents is quantified in the table above For every speaker and emotion, CosyVoice 2 utterances show the greatest average cosine distance from their respective centroid. CosyVoice 2 produces a wide variety of accents for each speaker and emotion. This backs up the visualisations and the listening test results...
 		</p>
 	  </div>
 	</div>
