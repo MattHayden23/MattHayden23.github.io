@@ -769,8 +769,12 @@ a:focus {
 }
 
 .table_component caption {
-    caption-side: top;
+    caption-side: bottom;
     text-align: center;
+}
+
+caption {
+	caption-side: bottom;
 }
 
 .table_component th {
