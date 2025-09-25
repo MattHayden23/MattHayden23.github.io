@@ -543,7 +543,18 @@
   </div>
 </section>
 
-
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">
+			Impact on Emotion Realisation
+		</h2>
+	  </div>
+	</div>
+  </div>
+</section>
+	  
 <section class="hero is-small">
 	<!-- Image carousel -->
 	<div class="hero-body">
@@ -587,8 +598,79 @@
 	</div>
 	<!-- End image carousel -->
 </section>
-	  
-<section class="hero is-small"></section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <p>
+			In addition to studying the accent of each utterance, their apparent emotion was also evaluated. This knowledge was key in determining the exact nature of the accent hallucination. Was accent in some way repacing the expected emotion or did they conincide? Analysis was conducted in much the same way as with accent. Each of the 100 utterances per condition were passed through emotion2vec <a href=https://arxiv.org/abs/2312.15185> (Ma et al. 2023) </a> to produce an emotion embedding.
+			These embeddings were then reduced in dimension through UMAP and plotted for each system. These visualisations can be seen above. Additionally, during the listening test, participants were asked to rate the similarity of a synthesised utterance to its ground truth equivalent, just as with accent. A summary of these results are shown in the table below.
+		</p>
+		<p>
+			<br><br>
+			<div style="overflow-x: auto; display: flex; justify-content: center;">
+				<table class="table table-hover pt-2"
+					style="max-width: 100%; border-collapse: collapse; border-bottom: 2px solid #dbdbdb; background-color: #f8f9fc;">
+					<caption><i>Average cosine distance between the accent embedding of an utterance and its centroid. Bold represents system with highest distance.</i></caption>
+						<thead>
+							<tr>
+								<th style="vertical-align : middle;text-align: center;" rowspan= "2"><b>System</b></td>
+								<th style="vertical-align : middle;text-align: center;" colspan= "3"><b>Average SMOS by Emotion</b></th>
+							</tr>
+							<tr>
+								<th style="vertical-align : middle;text-align: center;"><b>Angry</b></td>
+								<th style="vertical-align : middle;text-align: center;"><b>Happy</b></td>
+								<th style="vertical-align : middle;text-align: center;"><b>Neutral</b></td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td style="vertical-align : middle;text-align: center"><b>CosyVoice 2</b></td>
+								<td style="vertical-align : middle;text-align: center">3.52 <sub>± 0.20</sub></td>
+								<td style="vertical-align : middle;text-align: center">3.13 <sub>± 0.80</sub></td>
+								<td style="vertical-align : middle;text-align: center">3.30 <sub>± 0.20</sub></td>
+							</tr>
+							<tr>
+								<td style="vertical-align : middle;text-align: center"><b>MaskGCT</b></td>
+								<td style="vertical-align : middle;text-align: center">2.58 <sub>± 0.95</sub></td>
+								<td style="vertical-align : middle;text-align: center">3.44 <sub>± 0.41</sub></td>
+								<td style="vertical-align : middle;text-align: center">2.53 <sub>± 0.69</sub></td>
+							</tr>
+							<tr>
+								<td style="vertical-align : middle;text-align: center; border-top: 3px solid black;"><b>p-value</b></td>
+								<td style="vertical-align : middle;text-align: center">0.062></td>
+								<td style="vertical-align : middle;text-align: center">0.46></td>
+								<td style="vertical-align : middle;text-align: center"><b>0.043</b></td>
+							</tr>
+						</tbody>
+				</table>
+			</div>
+		</p>
+		<p>
+			The visualisations align with listening test findings, showing that although performance is largely similar, CosyVioce 2 does slightly improve over MaskGCT in terms of percieved emotion similarity, particularly for neutral and angry utterances. This suggests that hallucinated accents aren't in some way replacing emotions during synthesis, instead the 2 features develop separately.
+			No significant correlation was found between accent and emotion SMOS scores for CosyVoice 2 utterances with a Pearson correlation of <i>r = 0.073</i>. MaskGCT does however see a strong positive correlation with a Pearson correlation of <i>r = 0.393</i>. This is likely due to deliberately poor utterances being chosen. Utterances were chosen for the listening test based on cosine similarity
+			between the accent embeddings of the synthesised utterance and ground truth, with the lowest scoring utterances picked. Because there was little to no accent hallucination using MaskGCT low scoring sentences seem to be those which are more generally poor formed, e.g. they sounded robotic. Such utterances may also be likely to perform poorly on emotion similarity.
+			The key takeaway from these results is that the emotion of an CosyVoice 2 utterance is not impacted by accent hallucination. Accent-emotion hallucination only works one way.
+		</p>
+	  </div>
+	</div>
+  </div>
+</section>
+
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">
+			Example Utterances
+		</h2>
+	  </div>
+	</div>
+  </div>
+</section>
+
     <div class="table-responsive pt-3">
         <table class="table table-hover pt-2"
 			style="max-width: 100%; border-collapse: collapse; border-bottom: 2px solid #dbdbdb;">
