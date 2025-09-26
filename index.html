@@ -257,7 +257,7 @@
 		<figure>
 			<br>
 			<img src="images/header_image.png" alt="M012 UMAP plot" class="blend-img-background center-image" style="max-width: 100%; height: auto;" loading="lazy">
-			<figcaption>We discover and analyse a new type of accent hallucination in CosyVoice 2 <a href="https://arxiv.org/abs/2412.10117">(Du et al, 2024)</a> dubbed accent-emotion entanglement. In accent-emotion entanglement, the nature of the hallucinated accent is determined by the emotion of the input (reference speech and instruction) provided to CosyVoice 2. Angry input results in different accents to happy or neutral input. This has consequences, not only for the performance of the TTS system itself, but also for how TTS systems ought to be evaluated in order to avoid such phenomena in the future.</figcaption>
+			<figcaption>We discover and analyse a new type of accent hallucination in CosyVoice 2 <a href="https://arxiv.org/abs/2412.10117">(Du et al, 2024)</a> dubbed accent-emotion entanglement. In accent-emotion entanglement, the nature of the hallucinated accent is determined by the emotion of the input (reference speech and instruction) provided to CosyVoice 2. Angry input, for example, results in different accents to happy or neutral input. This has consequences, not only for the performance of the TTS system itself, but also for how TTS systems ought to be evaluated in order to avoid such phenomena in the future.</figcaption>
 		</figure>
 	  </div>
 	</div>
@@ -267,7 +267,7 @@
 <!-- Paper abstract -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
+    <div class="columns is-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
@@ -299,6 +299,16 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-full">
+		<figure>
+			<br>
+			<img src="images/list_test_plot.png" alt="Listening Test Accent Results" class="blend-img-background center-image" style="max-width: 100%; height: auto;" loading="lazy">
+			<figcaption><i>Comparion of average accent SMOS scores for CosyVoice 2 and MaskGCT. Based on listening test with 29 participants using a 1-5 scale.</i></figcaption>
+		</figure>
+		<p>
+			<br><br>To both quantify accent-emotion entanglement and validate its existence, a listening test was conducted. 29 participants were asked to rate the similarity between a synthesised utterance and the ground truth (taken from the MEAD dataset <a href="https://dl.acm.org/doi/10.1007/978-3-030-58589-1_42"> (Wang et al, 2020)</a>) exclusively considering accent.
+			The reference speech provided to each TTS system matched the ground truth in speaker and emotion. CosyVoice 2 accepts fine-tuned instructions where MaskGCT does not. For the happy/angry condition, the instruction given was 'Make this sound angry/happy'. For neutral utterances no instruction was given.
+			The rating system used a 1-5 scale, with lower scores representing lesser similarity. The results of this test are shown in the table below and are visualised above 
+		</p>
 	  	<p>
 			<div style="overflow-x: auto; display: flex; justify-content: center;">
 				<table class="table table-hover pt-2"
@@ -374,18 +384,8 @@
 				</table>
 			</div>
 		</p>
-        <p>
-			<br><br>To both quantify accent-emotion entanglement and validate its existence, a listening test was conducted. 29 participants were asked to rate the similarity between a synthesised utterance and the ground truth (taken from the MEAD dataset <a href="https://dl.acm.org/doi/10.1007/978-3-030-58589-1_42"> (Wang et al, 2020)</a>) only in terms of accent.
-			The reference speech provided to each TTS system matched the ground truth in speaker and emotion. CosyVoice 2 accepts fine-tuned instructions where MaskGCT does not. For the happy/angry condition, the instruction given was 'Make this sound angry/happy'. For neutral utterances no instruction was given.
-			The rating system used a 1-5 scale, with lower scores representing lesser similarity. The results of this test are shown in the table above and are visualised below. 
-		</p>
-		<figure>
-			<br>
-			<img src="images/list_test_plot.png" alt="Listening Test Accent Results" class="blend-img-background center-image" style="max-width: 100%; height: auto;" loading="lazy">
-			<figcaption><i>Comparion of average accent SMOS scores for CosyVoice 2 and MaskGCT. Based on listening test with 29 participants using a 1-5 scale.</i></figcaption>
-		</figure>
 		<p>
-			<br>These results confirmed that CosyVoice 2 often fails to accurately represent the accent of a reference speaker. Happy utterances seemed particularly prone to accent hallucination, with an average SMOS of just 1.84. All 3 emotions though saw low scoring utterances suggesting that accent hallucination was not exclusively caused by certain emotions.
+			<br>These results confirmed that CosyVoice 2 often fails to accurately represent the accent of the reference speaker. Happy utterances seemed particularly prone to accent hallucination, with an average SMOS of just 1.84. All 3 emotions though saw low scoring utterances suggesting that accent hallucination was not only caused by certain emotions.
 			Instead, listening to the utterances revealed that nature of the accent hallucination did seem to be guided by the emotion of the input. A selection of the utterances used in the listening test can be heard at the bottom of the page while a preview of the listening test can be seen <a href="https://edinburgh.eu.qualtrics.com/jfe/preview/previewId/78f18236-4601-4273-a736-169153040af5/SV_0D4WFRBRpKhCe1M?Q_CHL=preview&Q_SurveyVersionID=current"><u>here</u></a>.
 		</p>
 	  </div>
@@ -418,28 +418,28 @@
 					<img src="images/M007.png" alt="First research result visualization" loading="lazy"/>
 					<!-- TODO: Replace with description of this result -->
 					<h2 class="subtitle has-text-centered">
-					  UMAP plots for speaker M007 (male) in the MEAD database, <a href="https://dl.acm.org/doi/10.1007/978-3-030-58589-1_42"> (Wang et al, 2020)</a>), showing how the accents of utterances cluster for different emotions. Points represent utterance accent embeddings derived from GenAID <a href="https://www.arxiv.org/abs/2409.09098">(Zhong et al, 2025)</a>, reduced to 2 dimensions. Ground truth accent points are included from the CommonAccent, <a href="https://arxiv.org/abs/2305.18283">(Zuluaga-Gomez et al, 2023)</a>, and VCTK, <a href="https://datashare.ed.ac.uk/handle/10283/3443">(Yamagishi et al, 2020)</a>, databases. 
+					  UMAP plots for speaker M007 (male) in the MEAD database, <a href="https://dl.acm.org/doi/10.1007/978-3-030-58589-1_42"> (Wang et al, 2020)</a>), showing how accents cluster for utterances with different emotions. Points represent utterance accent embeddings derived from GenAID <a href="https://www.arxiv.org/abs/2409.09098">(Zhong et al, 2025)</a>, reduced to 2 dimensions. Ground truth accent points are included from the CommonAccent, <a href="https://arxiv.org/abs/2305.18283">(Zuluaga-Gomez et al, 2023)</a>, and VCTK, <a href="https://datashare.ed.ac.uk/handle/10283/3443">(Yamagishi et al, 2020)</a>, databases. 
 					</h2>
 				  </div>
 				  <div class="item">
 					<!-- Your image here -->
 					<img src="images/M012.png" alt="Second research result visualization" loading="lazy"/>
 					<h2 class="subtitle has-text-centered">
-					  UMAP plots for speaker M012 (male) in the MEAD database, <a href="https://dl.acm.org/doi/10.1007/978-3-030-58589-1_42"> (Wang et al, 2020)</a>), showing how the accents of utterances cluster for different emotions. Points represent utterance accent embeddings derived from GenAID <a href="https://www.arxiv.org/abs/2409.09098">(Zhong et al, 2025)</a>, reduced to 2 dimensions. Ground truth accent points are included from the CommonAccent, <a href="https://arxiv.org/abs/2305.18283">(Zuluaga-Gomez et al, 2023)</a>, and VCTK, <a href="https://datashare.ed.ac.uk/handle/10283/3443">(Yamagishi et al, 2020)</a>, databases. 
+					  UMAP plots for speaker M012 (male) in the MEAD database, <a href="https://dl.acm.org/doi/10.1007/978-3-030-58589-1_42"> (Wang et al, 2020)</a>), showing how accents cluster for utterances with different emotions. Points represent utterance accent embeddings derived from GenAID <a href="https://www.arxiv.org/abs/2409.09098">(Zhong et al, 2025)</a>, reduced to 2 dimensions. Ground truth accent points are included from the CommonAccent, <a href="https://arxiv.org/abs/2305.18283">(Zuluaga-Gomez et al, 2023)</a>, and VCTK, <a href="https://datashare.ed.ac.uk/handle/10283/3443">(Yamagishi et al, 2020)</a>, databases. 
 					</h2>
 				  </div>
 				  <div class="item">
 					<!-- Your image here -->
 					<img src="images/W018.png" alt="Third research result visualization" loading="lazy"/>
 					<h2 class="subtitle has-text-centered">
-					UMAP plots for speaker W018 (female) in the MEAD database, <a href="https://dl.acm.org/doi/10.1007/978-3-030-58589-1_42"> (Wang et al, 2020)</a>), showing how the accents of utterances cluster for different emotions. Points represent utterance accent embeddings derived from GenAID <a href="https://www.arxiv.org/abs/2409.09098">(Zhong et al, 2025)</a>, reduced to 2 dimensions. Ground truth accent points are included from the CommonAccent, <a href="https://arxiv.org/abs/2305.18283">(Zuluaga-Gomez et al, 2023)</a>, and VCTK, <a href="https://datashare.ed.ac.uk/handle/10283/3443">(Yamagishi et al, 2020)</a>, databases. 				   
+					UMAP plots for speaker W018 (female) in the MEAD database, <a href="https://dl.acm.org/doi/10.1007/978-3-030-58589-1_42"> (Wang et al, 2020)</a>), showing how accents cluster for utterances with different emotions. Points represent utterance accent embeddings derived from GenAID <a href="https://www.arxiv.org/abs/2409.09098">(Zhong et al, 2025)</a>, reduced to 2 dimensions. Ground truth accent points are included from the CommonAccent, <a href="https://arxiv.org/abs/2305.18283">(Zuluaga-Gomez et al, 2023)</a>, and VCTK, <a href="https://datashare.ed.ac.uk/handle/10283/3443">(Yamagishi et al, 2020)</a>, databases. 
 					</h2>
 				 </div>
 				 <div class="item">
 				  <!-- Your image here -->
 				  <img src="images/W033.png" alt="Fourth research result visualization" loading="lazy"/>
 				  <h2 class="subtitle has-text-centered">
-					UMAP plots for speaker W033 (female) in the MEAD database, <a href="https://dl.acm.org/doi/10.1007/978-3-030-58589-1_42"> (Wang et al, 2020)</a>), showing how the accents of utterances cluster for different emotions. Points represent utterance accent embeddings derived from GenAID <a href="https://www.arxiv.org/abs/2409.09098">(Zhong et al, 2025)</a>, reduced to 2 dimensions. Ground truth accent points are included from the CommonAccent, <a href="https://arxiv.org/abs/2305.18283">(Zuluaga-Gomez et al, 2023)</a>, and VCTK, <a href="https://datashare.ed.ac.uk/handle/10283/3443">(Yamagishi et al, 2020)</a>, databases. 				   
+					UMAP plots for speaker W033 (female) in the MEAD database, <a href="https://dl.acm.org/doi/10.1007/978-3-030-58589-1_42"> (Wang et al, 2020)</a>), showing how accents cluster for utterances with different emotions. Points represent utterance accent embeddings derived from GenAID <a href="https://www.arxiv.org/abs/2409.09098">(Zhong et al, 2025)</a>, reduced to 2 dimensions. Ground truth accent points are included from the CommonAccent, <a href="https://arxiv.org/abs/2305.18283">(Zuluaga-Gomez et al, 2023)</a>, and VCTK, <a href="https://datashare.ed.ac.uk/handle/10283/3443">(Yamagishi et al, 2020)</a>, databases. 
 				  </h2>
 				</div>
 			</div>
@@ -453,10 +453,10 @@
     <div class="columns is-centered">
       <div class="column is-full">
         <p>
-			To further investigate the nature of the issues in CosyVoice 2 and to establish the existence of accent-emotion entanglement over random accent hallucination, the sythesised utterances were further evaluated. 100 utterances were synthesised for each emotion (angry/happy/neutral), target text (5 total), speaker (2 male, 2 female) and system (CosyVoice 2 and MaskGCT). 
+			To further investigate the nature of the issues in CosyVoice 2 and to establish the existence of accent-emotion entanglement over random accent hallucination, sythesised utterances were analysed using a selection of objective metrics. 100 utterances were synthesised for each emotion (angry/happy/neutral), target text (5 total), speaker (2 male, 2 female) and system (CosyVoice 2 and MaskGCT). 
 			Each utterance was then passed through an accent recognition system, GenAID <a href="https://www.arxiv.org/abs/2409.09098">(Zhong et al, 2025)</a>, to produce accent embeddings. These embeddings can be seen in the graphs above, reduced to 2 dimensions through UMAP projection. Ground truth accents were taken from the VCTK <a href="https://datashare.ed.ac.uk/handle/10283/3443">(Yamagishi et al, 2020)</a> and CommonAccent <a href="https://arxiv.org/abs/2305.18283">(Zuluaga-Gomez et al, 2023)</a> databases to provide context.
-			These visualisations support the listening test resutls and show how the emotion of the input provided to CosyVoice 2 impacts the accent of the output. While the majority of utterances have a General American accent, regardless of the accent of the reference speaker, clusters of outliers can be seen for each emotions. For example, many angry utterances are given African accents.
-			This does not occur for neutral input which instead sees a cluster of British-accented utterances. Where the accents of utterances produced by MaskGCT are generally close to their ground truth equivalent, CosyVoice 2 utterances follow a very similar, highly dispersed pattern regardless of reference speaker. This suggests that it is not exclusively some element of the reference speech that is leading to the accent hallucination.<br>
+			These visualisations support the listening test resutls and show how the emotion of the input provided to CosyVoice 2 impacts the accent of the output. While the majority of utterances have a General American accent, regardless of the accent of the reference speaker, clusters of outliers can be seen for each emotion. Many angry utterances, for example, are given African accents.
+			This does not occur for neutral input which instead sees a cluster of British-accented utterances. Where the accents of utterances produced by MaskGCT are generally close to their ground truth equivalent, CosyVoice 2 utterances follow a distinct, highly dispersed pattern regardless of reference speaker. This suggests that it is not exclusively some element of the reference speech that is leading to the accent hallucination.<br>
 		</p>
 		<p>
 			<br><br>
@@ -559,9 +559,9 @@
 			</div>
 		</p>
 		<p>
-			<br><br>The greater spread of the CosyVoice 2 utterance accents is quantified in the table above For every speaker and emotion, CosyVoice 2 utterances show the greatest average cosine distance from their respective centroid. CosyVoice 2 produces a wide variety of accents for each speaker and emotion. This aligns with the visualisations and the listening test results.
-			A key motivator for this project was to use a variety of evaluation metrics which come together to clear picture of accent-emotion entanglement. It should clear what each metric captures and how they are grounded in human perception. Many systems now present results for metrics such as speaker similarity, handily captured in a single number for each condition. 
-			However, upon deeper analysis it is often not obvious what exactly these measures tell us. Can we truly capture speaker similarity in a single number? Evaluation through metrics which are either poorly described, under-utilised or overburdened does not paint the whole picture, leading to unexpected phenomena such as accent-emotion entanglement to slip through the cracks.
+			<br><br>The greater spread of CosyVoice 2 utterance accents is quantified in the table above. For every speaker and emotion, CosyVoice 2 utterances show the greatest average cosine distance from their respective centroid. CosyVoice 2 produces a wide variety of accents for each speaker and emotion. This aligns with the visualisations and the listening test results.
+			A key motivator for this project was to use a variety of evaluation metrics which come together to produce a clear picture of accent-emotion entanglement. The goal was for it to be clear what each metric captures and how they are grounded in human perception. Many systems now present results for metrics such as speaker similarity, handily captured in a single number for each condition. 
+			However, upon deeper analysis it is often not obvious what exactly these measures tell us. Can we truly capture speaker similarity in a single number? Evaluation through metrics which are either poorly described, under-utilised or overburdened does not paint the whole picture, leading to unexpected phenomena such as accent-emotion entanglement slipping through the cracks.
 		</p>
 	  </div>
 	</div>
@@ -629,8 +629,8 @@
     <div class="columns is-centered">
       <div class="column is-full">
         <p>
-			In addition to studying the accent of each utterance, their apparent emotion was also evaluated. This knowledge was key in determining the exact nature of the accent hallucination. Was accent in some way repacing the expected emotion or did they conincide? Analysis was conducted in much the same way as with accent. Each of the 100 utterances per condition were passed through emotion2vec <a href=https://arxiv.org/abs/2312.15185> (Ma et al. 2023) </a> to produce an emotion embedding.
-			These embeddings were then reduced in dimension through UMAP and plotted for each system. These visualisations can be seen above. Additionally, during the listening test, participants were asked to rate the similarity of a synthesised utterance to its ground truth equivalent, just as with accent. A summary of these results are shown in the table below.
+			In addition to studying the accent of each utterance, their emotion was also evaluated. This knowledge was key in determining the exact nature of the accent hallucination. Was accent in some way replacing the expected emotion or did they conincide? Analysis was conducted in much the same way as with accent. Each of the 100 utterances per condition were passed through emotion2vec <a href=https://arxiv.org/abs/2312.15185> (Ma et al. 2023) </a> to produce an emotion embedding.
+			These embeddings were then reduced in dimension through UMAP and plotted for each system. These visualisations can be seen above. Additionally, during the listening test, participants were asked to rate the similarity of a synthesised utterance's emotion to its ground truth equivalent, just as with accent. A summary of these results are shown in the table below.
 		</p>
 		<p>
 			<br><br>
@@ -674,10 +674,10 @@
 			</div>
 		</p>
 		<p>
-			<br>The visualisations align with listening test findings, showing that although performance is largely similar, CosyVioce 2 does slightly improve over MaskGCT in terms of percieved emotion similarity, particularly for neutral and angry utterances. This suggests that hallucinated accents aren't in some way replacing emotions during synthesis, instead the 2 features develop separately.
-			No significant correlation was found between accent and emotion SMOS scores for CosyVoice 2 utterances with a Pearson correlation of <i>r = 0.073</i>. MaskGCT does however see a strong positive correlation with a Pearson correlation of <i>r = 0.393</i>. This is likely due to deliberately poor utterances being chosen. Utterances were chosen for the listening test based on cosine similarity
-			between the accent embeddings of the synthesised utterance and ground truth, with the lowest scoring utterances picked. Because there was little to no accent hallucination using MaskGCT low scoring sentences seem to be those which are more generally poor formed, e.g. they sounded robotic. Such utterances may also be likely to perform poorly on emotion similarity.
-			The key takeaway from these results is that the emotion of an CosyVoice 2 utterance is not impacted by accent hallucination. Accent-emotion hallucination only works one way.
+			<br>The visualisations align with listening test findings, showing that although performance is largely similar, CosyVoice 2 does slightly improve over MaskGCT in terms of percieved emotion similarity, particularly for neutral and angry utterances. This suggests that hallucinated accents aren't in some way replacing emotions during synthesis, instead the 2 features develop separately.
+			No significant correlation was found between accent and emotion SMOS scores for CosyVoice 2 utterances with a Pearson correlation of <i>r = 0.073</i>. MaskGCT does however see a weak positive correlation with a Pearson correlation of <i>r = 0.393</i>. This is likely due to deliberately poor utterances being chosen. Utterances were chosen for the listening test based on cosine similarity
+			between the accent embeddings of the synthesised utterance and the ground truth, with the lowest scoring utterances picked. Because there was little to no accent hallucination using MaskGCT low scoring sentences seem to be those which are more generally poor formed, e.g. they sounded robotic. Such utterances may also be likely to perform poorly on emotion similarity.
+			The key takeaway from these results is that the emotion of a CosyVoice 2 utterance is not impacted by accent hallucination. Accent-emotion hallucination only works one way.
 		</p>
 	  </div>
 	</div>
@@ -786,9 +786,8 @@
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Poster</h2>
-
       <!-- TODO: Replace with your poster PDF -->
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+      <iframe  src="static/pdfs/dissertation.pdf" width="100%" height="550">
           </iframe>
         
       </div>
@@ -798,7 +797,7 @@
 
 
 
-<!--BibTex citation -->
+<!--
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <div class="bibtex-header">
@@ -817,7 +816,7 @@
 }</code></pre>
     </div>
 </section>
-<!--End BibTex citation -->
+-->
 
 
   <footer class="footer">
